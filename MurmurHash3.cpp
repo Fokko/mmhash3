@@ -27,7 +27,7 @@
 
 // Other compilers
 
-#else // defined(_MSC_VER)
+#else  // defined(_MSC_VER)
 
 #if defined(__GNUC__) && ((__GNUC__ > 4) || (__GNUC__ == 4 && GNUC_MINOR >= 4))
 /* gcc version >= 4.4 4.1 = RHEL 5, 4.4 = RHEL 6. Don't inline for RHEL 5 gcc
@@ -50,7 +50,7 @@ inline uint64_t rotl64(uint64_t x, int8_t r) {
 
 #define BIG_CONSTANT(x) (x##LLU)
 
-#endif // !defined(_MSC_VER)
+#endif  // !defined(_MSC_VER)
 
 //-----------------------------------------------------------------------------
 // Block read - if your platform needs to do endian-swapping or can only
@@ -132,7 +132,7 @@ void MurmurHash3_x86_32(const void *key, Py_ssize_t len, uint32_t seed,
     k1 = ROTL32(k1, 15);
     k1 *= c2;
     h1 ^= k1;
-  };
+  }
 
   //----------
   // finalization
@@ -269,7 +269,7 @@ void MurmurHash3_x86_128(const void *key, const Py_ssize_t len, uint32_t seed,
     k1 = ROTL32(k1, 15);
     k1 *= c2;
     h1 ^= k1;
-  };
+  }
 
   //----------
   // finalization
@@ -393,7 +393,7 @@ void MurmurHash3_x64_128(const void *key, const Py_ssize_t len,
     k1 = ROTL64(k1, 31);
     k1 *= c2;
     h1 ^= k1;
-  };
+  }
 
   //----------
   // finalization
