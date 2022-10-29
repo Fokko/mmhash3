@@ -55,7 +55,7 @@ Beware that `hash64` returns **two** values, because it uses the 128-bit version
 `hash64`, `hash128`, and `hash_bytes` have the third argument for architecture optimization. Use True for x64 and False for x86 (default: True):
 
 ```shell
->>> mmh3.hash64("foo", 42, True) 
+>>> mmh3.hash64("foo", 42, True)
 (-840311307571801102, -6739155424061121879)
 ```
 
@@ -63,7 +63,7 @@ Beware that `hash64` returns **two** values, because it uses the 128-bit version
 
 
 ### 3.0.0 (2021-02-23)
-* 
+*
 * Python wheels are now available, thanks to the power of [cibuildwheel](https://github.com/joerick/cibuildwheel).
   * Supported platforms are `manylinux1_x86_64`, `manylinux2010_x86_64`, `manylinux2014_aarch64`, `win32`, `win_amd64`, `macosx_10_9_x86_64`, and `macosx_11_0_arm64` (Apple Silicon).
 * Add support for newer macOS environments. Thanks [Matthew Honnibal](https://github.com/honnibal)!

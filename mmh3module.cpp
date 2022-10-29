@@ -35,10 +35,10 @@ mmh3_hash(PyObject *self, PyObject *args, PyObject *keywds)
     int32_t result[1];
     long long_result = 0;
     int is_signed = 1;
-    
+
     static char *kwlist[] = {(char *)"key", (char *)"seed",
       (char *)"signed", NULL};
-      
+
 #ifndef _MSC_VER
   static uint64_t mask[] = {0x0ffffffff, 0xffffffffffffffff};
 #endif
@@ -58,7 +58,7 @@ mmh3_hash(PyObject *self, PyObject *args, PyObject *keywds)
   } else {
     return PyLong_FromUnsignedLong(long_result);
   }
-#else  
+#else
   /* for standard envs */
   long_result = result[0] & mask[is_signed];
   return PyLong_FromLong(long_result);
@@ -162,8 +162,8 @@ mmh3_hash128(PyObject *self, PyObject *args, PyObject *keywds)
      * and can be displaced (although it is practically stable). cf.
      * https://mail.python.org/pipermail/python-list/2006-August/372368.html
      */
-    PyObject *retval = _PyLong_FromByteArray((unsigned char *)result, 16, 1, is_signed);      
-    
+    PyObject *retval = _PyLong_FromByteArray((unsigned char *)result, 16, 1, is_signed);
+
     return retval;
 }
 
@@ -198,7 +198,7 @@ mmh3_hash_bytes(PyObject *self, PyObject *args, PyObject *keywds)
 struct module_state {
   PyObject *error;
 };
-    
+
 #if PY_MAJOR_VERSION >= 3
 #define GETSTATE(m) ((struct module_state*)PyModule_GetState(m))
 #else
