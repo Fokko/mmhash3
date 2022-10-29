@@ -38,7 +38,7 @@ mmh3module = Extension(
 )
 
 setup(
-    name="mmh3",
+    name="mmhash3",
     version="3.0.0",
     description="Python wrapper for MurmurHash (MurmurHash3), a set of fast and robust hash functions.",
     license="License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
