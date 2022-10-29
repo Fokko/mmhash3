@@ -1,21 +1,15 @@
-# mmh3
-[![GitHub Super-Linter](https://github.com/hajimes/mmh3/workflows/Super-Linter/badge.svg?branch=feature/ghactions)](https://github.com/hajimes/mmh3/actions?query=workflow%3ASuper-Linter+branch%3Amaster)
-[![Build passing](https://github.com/hajimes/mmh3/workflows/build/badge.svg?branch=feature/ghactions)](https://github.com/hajimes/mmh3/actions?query=workflow%3Abuild+branch%3Amaster)
-[![PyPi Version](https://img.shields.io/pypi/v/mmh3.svg?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/mmh3/)
-[![Python Versions](https://img.shields.io/pypi/pyversions/mmh3.svg)](https://pypi.org/project/mmh3/)
-[![License: CC0-1.0](https://img.shields.io/badge/License-CC0%201.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
-[![Total Downloads](https://pepy.tech/badge/mmh3)](https://pepy.tech/project/mmh3)
-[![Recent Downloads](https://pepy.tech/badge/mmh3/month)](https://pepy.tech/project/mmh3)
-[![Conda Version](https://img.shields.io/conda/vn/conda-forge/mmh3.svg?style=flat-square&logo=conda-forge&logoColor=white)](https://anaconda.org/conda-forge/mmh3)
+# mmhash3
 
-mmh3 is a Python wrapper for [MurmurHash (MurmurHash3)](https://en.wikipedia.org/wiki/MurmurHash), a set of fast and robust non-cryptographic hash functions invented by Austin Appleby.
+Fork of the original [mmh3](https://github.com/hajimes/mmh3/) library since it is unmaintained.
+
+mmhash3 is a Python wrapper for [MurmurHash (MurmurHash3)](https://en.wikipedia.org/wiki/MurmurHash), a set of fast and robust non-cryptographic hash functions invented by Austin Appleby.
 
 Combined with probabilistic techniques like a [Bloom filter](https://en.wikipedia.org/wiki/Bloom_filter), [MinHash](https://en.wikipedia.org/wiki/MinHash), and [feature hashing](https://en.wikipedia.org/wiki/Feature_hashing), mmh3 allows you to develop high-performance systems in fields such as data mining, machine learning, and natural language processing.
 
 ## How to use
 Install:
 ```shell
-pip install mmh3 # for macOS, use "pip3 install mmh3" and python3
+pip install mmhash3 # for macOS, use "pip3 install mmhash3" and python3
 ```
 
 Quickstart:
@@ -66,12 +60,15 @@ Beware that `hash64` returns **two** values, because it uses the 128-bit version
 ```
 
 ## Changelog
+
+
 ### 3.0.0 (2021-02-23)
+* 
 * Python wheels are now available, thanks to the power of [cibuildwheel](https://github.com/joerick/cibuildwheel).
   * Supported platforms are `manylinux1_x86_64`, `manylinux2010_x86_64`, `manylinux2014_aarch64`, `win32`, `win_amd64`, `macosx_10_9_x86_64`, and `macosx_11_0_arm64` (Apple Silicon).
 * Add support for newer macOS environments. Thanks [Matthew Honnibal](https://github.com/honnibal)!
 * Drop support for Python 2.7, 3.3, 3.4, and 3.5.
-* Add support for Python 3.7, 3.8, and 3.9.
+* Add support for Python 3.7, 3.8, 3.9, 3.10 and 3.11
 * Migrate Travis CI and AppVeyor to GitHub Actions.
 
 ### 2.5.1 (2017-10-31)
