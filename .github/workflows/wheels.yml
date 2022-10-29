@@ -2,11 +2,6 @@ name: Build and Upload Wheels
 
 on:
   workflow_dispatch:
-    inputs:
-      repository:
-        description: 'The repository to upload the package to'
-        required: true
-        default: 'testpypi'
 
 jobs:
   build_wheels:
@@ -80,4 +75,4 @@ jobs:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
         run: |
-          twine upload  --repository ${{ github.event.inputs.repository }} dist/*
+          twine upload  dist/*
