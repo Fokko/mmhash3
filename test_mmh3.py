@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 import sys
 
-import mmh3
 import numpy as np
+
+import mmh3
 
 
 # see also https://stackoverflow.com/a/1375939
@@ -50,7 +51,7 @@ def test_hash():
 
     assert mmh3.hash("Hello, world!", u32_to_s32(0x9747B28C)) == u32_to_s32(0x24884CBA)
 
-    assert mmh3.hash(u"ππππππππ".encode("utf-8"), u32_to_s32(0x9747B28C)) == u32_to_s32(
+    assert mmh3.hash("ππππππππ".encode("utf-8"), u32_to_s32(0x9747B28C)) == u32_to_s32(
         0xD58063C1
     )
 
@@ -101,9 +102,7 @@ def test_hash_unsigned():
 
     assert mmh3.hash("Hello, world!", 0x9747B28C, signed=False) == 0x24884CBA
 
-    assert (
-        mmh3.hash(u"ππππππππ".encode("utf-8"), 0x9747B28C, signed=False) == 0xD58063C1
-    )
+    assert mmh3.hash("ππππππππ".encode("utf-8"), 0x9747B28C, signed=False) == 0xD58063C1
 
     assert mmh3.hash("a" * 256, 0x9747B28C, signed=False) == 0x37405BDC
 
@@ -161,7 +160,7 @@ def test_hash2():
 
     assert mmh3.hash("Hello, world!", 0x9747B28C) == u32_to_s32(0x24884CBA)
 
-    assert mmh3.hash(u"ππππππππ".encode("utf-8"), 0x9747B28C) == u32_to_s32(0xD58063C1)
+    assert mmh3.hash("ππππππππ".encode("utf-8"), 0x9747B28C) == u32_to_s32(0xD58063C1)
 
     assert mmh3.hash("a" * 256, 0x9747B28C) == u32_to_s32(0x37405BDC)
 
@@ -210,7 +209,7 @@ def test_hash128():
 def test_64bit():
     if sys.maxsize < (1 << 32):  # Skip this test under 32-bit environments
         return
-    a = np.zeros(2 ** 32, dtype=np.int8)
+    a = np.zeros(2**32, dtype=np.int8)
     assert mmh3.hash(a) == -1988950868
     assert mmh3.hash64(a) == (-6319308327427928234, -8156928649350215884)
     assert mmh3.hash128(a) == 189813591698865711411311444615608766294
