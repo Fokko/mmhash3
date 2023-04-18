@@ -44,7 +44,7 @@ setup(
     license="License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
     author="Hajime Senuma",
     author_email="hajime.senuma@gmail.com",
-    url="https://github.com/Fokko/mmhash",
+    url="https://github.com/Fokko/mmhash3",
     ext_modules=[mmh3module],
     keywords="utility hash MurmurHash",
     long_description=open("README.md").read(),
